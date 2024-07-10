@@ -1,4 +1,4 @@
-```text
+```tex
 \title{CURLoRA: Leveraging CUR Matrix Decomposition for Stable LLM Continual Fine-tuning and Catastrophic Forgetting Mitigation}
 \author{Muhammad Fawi}
 \date{}
