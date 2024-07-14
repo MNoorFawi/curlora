@@ -13,7 +13,8 @@ def compute_selection_probabilities(A):
 
 
 def select_indices_with_replacement(probs, k):
-    inverted_P = 1 / (probs + 0.001)
+    #inverted_P = 1 / (probs + 0.001)
+    inverted_P = (1 / (probs + 0.001)).float()
 
     # Normalize the inverted probabilities
     probs = inverted_P / inverted_P.sum()
