@@ -17,13 +17,15 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 #### Code Citation
 ```bibtex
 @software{Fawi_CURLoRA_Leveraging_CUR_2024,
-author = {Fawi, Muhammad},
-doi = {10.5281/zenodo.12730055},
-month = jul,
-title = {{CURLoRA: Leveraging CUR Matrix Decomposition for Stable LLM Continual Fine-Tuning and Catastrophic Forgetting Mitigation}},
-url = {https://github.com/mnoorfawi/curlora},
-version = {v2.0.0},
-year = {2024}
+  author       = {Fawi, Muhammad},
+  doi          = {10.5281/zenodo.12730055},
+  month        = jul,
+  title        = {{CURLoRA: Leveraging CUR Matrix Decomposition for
+                   Stable LLM Continual Fine-Tuning and Catastrophic
+				   Forgetting Mitigation}},
+  url          = {https://github.com/mnoorfawi/curlora},
+  version      = {v2.0.0},
+  year         = {2024}
 }
 ```
 
