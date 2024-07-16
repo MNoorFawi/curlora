@@ -16,22 +16,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ## Citation
 #### Code Citation
 ```bibtex
-@software{Fawi_CURLoRA_Leveraging_CUR_2024,
-  author       = {Fawi, Muhammad},
-  doi          = {10.5281/zenodo.12730055},
-  month        = jul,
-  title        = {{CURLoRA: Leveraging CUR Matrix Decomposition for
-                   Stable LLM Continual Fine-Tuning and Catastrophic
-				   Forgetting Mitigation}},
-  url          = {https://github.com/mnoorfawi/curlora},
-  version      = {v2.0.0},
-  year         = {2024}
-}
-```
-
-#### Research Paper Citation
-```bibtex
-@misc{fawi_2024_12740116,
+@software{fawi_2024_12738436,
   author       = {Fawi, Muhammad},
   title        = {{CURLoRA: Leveraging CUR Matrix Decomposition for 
                    Stable LLM Continual Fine-Tuning and Catastrophic
@@ -39,7 +24,23 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
   month        = jul,
   year         = 2024,
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.12740116},
-  url          = {https://doi.org/10.5281/zenodo.12740116}
+  version      = {v2.0.0},
+  doi          = {10.5281/zenodo.12738436},
+  url          = {https://doi.org/10.5281/zenodo.12738436}
+}
+```
+
+#### Research Paper Citation
+```bibtex
+@misc{fawi_2024_12730055,
+  author       = {Fawi, Muhammad},
+  title        = {{CURLoRA: Leveraging CUR Matrix Decomposition for 
+                   Stable LLM Continual Fine-Tuning and Catastrophic
+                   Forgetting Mitigation}},
+  month        = jul,
+  year         = 2024,
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.12730055},
+  url          = {https://doi.org/10.5281/zenodo.12730055}
 }
 ```
