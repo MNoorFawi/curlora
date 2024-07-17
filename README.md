@@ -38,6 +38,7 @@ Please Note:
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/MNoorFawi/curlora/blob/main/LICENSE) file for details.
 
 ## Citation
+If you find CURLoRA research or code helpful, please consider citing it.
 
 #### Code Citation
 
