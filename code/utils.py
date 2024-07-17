@@ -52,6 +52,8 @@ def calculate_perplexity(model, tokenizer, text, device='cuda'):
         _ = gc.collect()
 
 
+# I used this function "replace_linear_with_lora" from
+# https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-E/01_main-chapter-code/appendix-E.ipynb
 def replace_linear_with_curlora(model, rank, alpha):
     for name, module in model.named_children():
         #if isinstance(module, torch.nn.Linear):

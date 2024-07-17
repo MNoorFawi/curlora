@@ -1,7 +1,8 @@
 import math
 import torch
 
-
+# LoRA classes were used from
+# https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-E/01_main-chapter-code/appendix-E.ipynb
 class LoRALayer(torch.nn.Module):
     def __init__(self, in_dim, out_dim, rank, alpha):
         super().__init__()
