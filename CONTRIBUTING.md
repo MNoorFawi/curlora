@@ -6,7 +6,7 @@ When contributing to this repository, if possible but not required, please first
 via issue, email, or any other method you prefer. I would like to learn from you. 
 
 There is still a lot to do to enhance the code and a lot to be implemented like:
-1. enabling CURLoRA within **Trainer and SFTTrainer** classes
+1. enabling instruction fine-tuning within **Trainer** and **SFTTrainer** classes
 2. enabling CURLoRA with **Quantization** to perform QCURLoRA. 
 
 ## When creating a Pull Request please:

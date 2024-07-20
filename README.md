@@ -30,7 +30,7 @@ Now you have the model with the CURLoRA layers applied to Attention layers (Key,
 Please Note:
 1. Some variables and values are hardcoded either in code/utils.py or code/curlora.py like the layers to apply to, rank, alpha, device etc.
 2. Ongoing work (contributions are welcome) on supporting quantization (QCURLoRA) i.e. so far you load the whole model not quantized.
-3. Ongoing work (contributions are welcome) to enable fine-tuning with Trainer and/or SFTTrainer
+3. Ongoing work (contributions are welcome) to enable instruction fine-tuning with Trainer and/or SFTTrainer
 4. In code/ directory there are notebooks to run the research paper experiments
 
 ## License
