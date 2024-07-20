@@ -52,8 +52,8 @@ If you find CURLoRA research or code helpful, please consider citing them.
   year         = 2024,
   publisher    = {Zenodo},
   version      = {v2.0.0},
-  doi          = {10.5281/zenodo.12738436},
-  url          = {https://doi.org/10.5281/zenodo.12738436}
+  doi          = {10.5281/zenodo.12729738},
+  url          = {https://zenodo.org/doi/10.5281/zenodo.12729738}
 }
 ```
 
