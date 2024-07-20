@@ -68,7 +68,10 @@ class CURModule(nn.Module):
 
     def forward(self, x):
         W_approx = torch.matmul(torch.matmul(self.C, self.U), self.R)
-        x = torch.matmul(x, W_approx.t())
+        try:
+            x = torch.matmul(x, W_approx.t())
+        except:
+            x = torch.matmul(x, W_approx)
         #x = self.d(x)
         return x
 

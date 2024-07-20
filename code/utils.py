@@ -18,7 +18,7 @@ txt = [s for s in txt if s != '']
 txt = "".join(txt)
 
 device = "cuda"
-max_len = 512
+max_len = 512 # 256 for GPT2 and RoBERTa
 lr = 2.5e-4
 
 
@@ -27,7 +27,7 @@ def calculate_perplexity(model, tokenizer, text, device='cuda'):
         print("Warning: Empty text encountered")
         return float('inf')
     
-    encodings = tokenizer(text, return_tensors='pt', truncation=True, padding = True, max_length=10000)
+    encodings = tokenizer(text, return_tensors='pt', truncation=True, padding = True, max_length=10000) # only max_len for GPT2 and RoBERTa
     input_ids = encodings.input_ids.to(device)
     
     if input_ids.numel() == 0:
