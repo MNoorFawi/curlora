@@ -8,7 +8,13 @@ This repo contains the code for the CURLoRA research paper, a novel approach to 
 
 ## Contents
 - `CURLoRA.pdf`: The research paper detailing the CURLoRA approach.
-- `code/`: Directory containing the implementation of CURLoRA.
+- `code/`: Directory containing the implementation of CURLoRA and the experiments.
+	- `code/curlora.py`: Containing CURLoRA classes.
+	- `code/utils.py`: Helper functions.
+	- `code/lora.py`: LoRA classes.
+	- `code/curlora_experiment.ipynb`: CURLoRA experiment with Mistral 7B (Fine-tuning on MRPC, SST-2 and Sentiment140).
+	- `code/curlora_experiment-gpt.ipynb`: CURLoRA experiment with GPT2-Large (Fine-tuning on MRPC, SST-2 and Sentiment140).
+	- `code/squad_gpt-curlora.ipynb`: Fine-Tuning GPT2-Large with CURLoRA on SQuAD dataset.
 
 ## Quick Start
 First we install the requirements
@@ -16,14 +22,35 @@ First we install the requirements
 pip3 install -r code/requirements.txt
 ```
 
-All CURLoRA helper functions and classes are defined in *code/curlora.py* and *code/utils.py*. So we only need to import the modules, load the model normally and apply CURLoRA on the layers we like.
+All CURLoRA helper functions and classes are defined in *code/curlora.py* and *code/utils.py*.
 
-Load the model
+Load the model and apply CURLoRA
 ```python
+from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments
 from utils import *
 
-model_name = "mistralai/Mistral-7B-v0.3"
-model, tokenizer, lm_head = load_model_and_tokenizer(model_name, type = "curlora")
+model_name = "gpt2-large"
+model = AutoModelForCausalLM.from_pretrained(model_name)
+model.to("cuda") # this will make all existing layers in CUDA
+
+# turning off grad for all layers
+for param in model.parameters():
+        param.requires_grad = False
+
+
+# replace original Q,K,V layers with CURLoRA (GPT2-Large specific)
+# refer to utils.py for a more general way
+for name, module in model.named_modules():
+    if isinstance(module, type(model.transformer.h[0].attn)):
+		# rank = 24, alpha = 1
+		module.c_attn = LinearWithCURLoRA(module.c_attn, 24, 1)
+
+
+# now look at how many CURLoRA parameters to be trained
+total_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
+print(f"Total trainable parameters after: {total_params:,}")
+# making sure CURLoRA layers are on CUDA as well
+model.to("cuda")
 ```
 Now you have the model with the CURLoRA layers applied to Attention layers (Key, Value and Query) which you can use for either fine-tuning or inference normally.
 
