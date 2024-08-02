@@ -14,7 +14,9 @@ This repo contains the code for the CURLoRA research paper, a novel approach to 
 	- `code/lora.py`: LoRA classes.
 	- `code/curlora_experiment.ipynb`: CURLoRA experiment with Mistral 7B (Fine-tuning on MRPC, SST-2 and Sentiment140).
 	- `code/curlora_experiment-gpt.ipynb`: CURLoRA experiment with GPT2-Large (Fine-tuning on MRPC, SST-2 and Sentiment140).
-	- `code/squad_gpt-curlora.ipynb`: Fine-Tuning GPT2-Large with CURLoRA on SQuAD dataset.
+	- `code/squad_gpt-curlora.ipynb`: Fine-Tuning GPT2-Large for Q&A with CURLoRA and SFTTrainer on SQuAD dataset.
+
+###### Same notebooks are available for LoRA.
 
 ## Quick Start
 First we install the requirements
