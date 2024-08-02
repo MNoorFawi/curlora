@@ -35,15 +35,15 @@ model.to("cuda") # this will make all existing layers in CUDA
 
 # turning off grad for all layers
 for param in model.parameters():
-        param.requires_grad = False
+    param.requires_grad = False
 
 
 # replace original Q,K,V layers with CURLoRA (GPT2-Large specific)
 # refer to utils.py for a more general way
 for name, module in model.named_modules():
     if isinstance(module, type(model.transformer.h[0].attn)):
-	    # rank = 24, alpha = 1
-	    module.c_attn = LinearWithCURLoRA(module.c_attn, 24, 1)
+        # rank = 24, alpha = 1
+        module.c_attn = LinearWithCURLoRA(module.c_attn, 24, 1)
 
 
 # now look at how many CURLoRA parameters to be trained
@@ -58,7 +58,7 @@ You may need to know how the layer is called so that you can replace it correctl
 ```python
 for name, module in model.named_children():
     if any(l in name for l in ["q_proj", "v_proj", "k_proj"]):
-		setattr(model, name, LinearWithCURLoRA(module, rank, alpha))
+	    setattr(model, name, LinearWithCURLoRA(module, rank, alpha))
 ```
 
 Please Note:
