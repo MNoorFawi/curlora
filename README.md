@@ -1,10 +1,10 @@
 # CURLoRA: Stable LLM Continual Fine-Tuning and Catastrophic Forgetting Mitigation
-Code DOI:
+<strong>Muhammad Fawi</strong> <a style="vertical-align: top;" href="https://orcid.org/0009-0007-7210-0528" target="orcid.widget" rel="noopener noreferrer"><img style="width: 1em; margin-right: .5em;" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID iD icon" /></a>
 
+Code DOI:
 [![DOI](https://zenodo.org/badge/827041462.svg)](https://zenodo.org/doi/10.5281/zenodo.12729738)
 
 Research Preprint DOI:
-
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12730055.svg)](https://doi.org/10.5281/zenodo.12730055)
 
 ## Overview
