@@ -26,7 +26,7 @@ All CURLoRA helper functions and classes are defined in *code/curlora.py* and *c
 
 Load the model and apply CURLoRA
 ```python
-from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments
+from transformers import AutoTokenizer, AutoModelForCausalLM
 from utils import *
 
 model_name = "gpt2-large"
@@ -42,8 +42,8 @@ for param in model.parameters():
 # refer to utils.py for a more general way
 for name, module in model.named_modules():
     if isinstance(module, type(model.transformer.h[0].attn)):
-		# rank = 24, alpha = 1
-		module.c_attn = LinearWithCURLoRA(module.c_attn, 24, 1)
+	    # rank = 24, alpha = 1
+	    module.c_attn = LinearWithCURLoRA(module.c_attn, 24, 1)
 
 
 # now look at how many CURLoRA parameters to be trained
@@ -54,10 +54,18 @@ model.to("cuda")
 ```
 Now you have the model with the CURLoRA layers applied to Attention layers (Key, Value and Query) which you can use for either fine-tuning or inference normally.
 
+You may need to know how the layer is called so that you can replace it correctly. For instance, Q, K, V in Mistral can be found via:
+```python
+for name, module in model.named_children():
+    if any(l in name for l in ["q_proj", "v_proj", "k_proj"]):
+		setattr(model, name, LinearWithCURLoRA(module, rank, alpha))
+```
+
 Please Note:
 1. Some variables and values are hardcoded either in code/utils.py or code/curlora.py like the layers to apply to, rank, alpha, device etc.
 2. Ongoing work (contributions are welcome) on supporting quantization (QCURLoRA) i.e. so far you load the whole model not quantized.
 3. In code/ directory there are notebooks to run the research paper experiments
+4. You may need to use a slightly higher learning rate than with LoRA to get better accuracy. Higher learning rate won't cause overfitting due to the "implicit regularization" explained in the paper.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/MNoorFawi/curlora/blob/main/LICENSE) file for details.

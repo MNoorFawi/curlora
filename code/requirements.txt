@@ -6,3 +6,5 @@ tqdm
 datasets
 evaluate
 accelerate
+trl
+sentencepiece
