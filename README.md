@@ -99,7 +99,7 @@ If you find CURLoRA research or code helpful, please consider citing them.
 
 2. APA
 ```text
-Fawi, M. (2024). CURLoRA: Leveraging CUR Matrix Decomposition for Stable LLM Continual Fine-Tuning and Catastrophic Forgetting Mitigation (v2.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.12738436
+Fawi, M. (2024). CURLoRA: Leveraging CUR Matrix Decomposition for Stable LLM Continual Fine-Tuning and Catastrophic Forgetting Mitigation (v4.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.12729738
 ```
 
 #### Research Paper Citation
