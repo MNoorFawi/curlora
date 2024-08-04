@@ -5,7 +5,7 @@ authors:
   given-names: "Muhammad"
   orcid: "https://orcid.org/0009-0007-7210-0528"
 title: "CURLoRA: Leveraging CUR Matrix Decomposition for Stable LLM Continual Fine-Tuning and Catastrophic Forgetting Mitigation"
-version: v2.0.0
-doi: 10.5281/zenodo.12738436
+version: v4.0.0
+doi: 10.5281/zenodo.12729738
 date-released: 2024-07-12
 url: "https://github.com/mnoorfawi/curlora"

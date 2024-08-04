@@ -64,7 +64,7 @@ You may need to know how the layer is called so that you can replace it correctl
 ```python
 for name, module in model.named_children():
     if any(l in name for l in ["q_proj", "v_proj", "k_proj"]):
-	    setattr(model, name, LinearWithCURLoRA(module, rank, alpha))
+        setattr(model, name, LinearWithCURLoRA(module, rank, alpha))
 ```
 
 Please Note:
@@ -83,7 +83,7 @@ If you find CURLoRA research or code helpful, please consider citing them.
 
 1. Bibtext
 ```bibtex
-@software{fawi_2024_12738436,
+@software{Fawi_CURLoRA_Leveraging_CUR_2024,
   author       = {Fawi, Muhammad},
   title        = {{CURLoRA: Leveraging CUR Matrix Decomposition for 
                    Stable LLM Continual Fine-Tuning and Catastrophic
@@ -91,7 +91,7 @@ If you find CURLoRA research or code helpful, please consider citing them.
   month        = jul,
   year         = 2024,
   publisher    = {Zenodo},
-  version      = {v2.0.0},
+  version      = {v4.0.0},
   doi          = {10.5281/zenodo.12729738},
   url          = {https://zenodo.org/doi/10.5281/zenodo.12729738}
 }
