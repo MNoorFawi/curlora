@@ -5,7 +5,7 @@ Code DOI:
 [![DOI](https://zenodo.org/badge/827041462.svg)](https://zenodo.org/doi/10.5281/zenodo.12729738)
 
 Research Preprint DOI:
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.12730055.svg)](https://doi.org/10.5281/zenodo.12730055)
+[![arXiv](https://img.shields.io/badge/arXiv-10.48550/arXiv.2408.14572-b31b1b.svg)](https://doi.org/10.48550/arXiv.2408.14572)
 
 ## Overview
 This repo contains the code for the CURLoRA research paper, a novel approach to fine-tuning large language models (LLMs) that leverages CUR matrix decomposition in the context of Low-Rank Adaptation (LoRA). Our method addresses two critical challenges in LLM fine-tuning: mitigating catastrophic forgetting during continual learning and reducing the number of trainable parameters. We propose a unique modification to the CUR decomposition process to enable a more efficient and stable way to adapt LLMs to new tasks without compromising any existing knowledge.  We demonstrate through experiments on multiple datasets that CURLoRA outperforms standard LoRA in mitigating catastrophic forgetting. It maintains model stability and performance across tasks while significantly reducing the number of trainable parameters. Our results show that CURLoRA achieves superior accuracy and perplexity scores compared to LoRA, particularly in scenarios with limited data.
